@@ -1,21 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const protect=require('../middleware/Authentication');
-const Transaction = require('../models/transaction');
-const asyncHandler = require('express-async-handler');
+const protect = require('../middleware/Authentication');
+const { getAllTransactions, postTransaction, getTransactionSummary, getTransactionbyid, putTransactionbyid, deleteTransaction } = require('../controllers/TransactionController');
 
-router.use("/",protect,asyncHandler(async(req,res)=>{
-   
-}))
+router.route("/")
+  .get(protect, getAllTransactions)
+  .post(protect, postTransaction);
 
-router.use("/",asyncHandler(async(req,res)=>{
-  
-}))
+router.get("/summary", protect, getTransactionSummary);
 
-router.use("/",asyncHandler(async(req,res)=>{
-  
-}))
+router.route("/:id")
+  .get(protect, getTransactionbyid)
+  .put(protect, putTransactionbyid)
+  .delete(protect, deleteTransaction);
 
-module.exports=router;
+module.exports = router;

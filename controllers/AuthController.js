@@ -3,6 +3,9 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const asyncHandler = require('express-async-handler');
 
+// @desc    Register a new user
+// @route   POST /api/auth/register
+// @access  Public
 const register= asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -10,6 +13,9 @@ const register= asyncHandler(async (req, res) => {
   res.json({ success: true, message: 'Registered Successfully' });
 })
 
+// @desc    Login user and return JWT token
+// @route   POST /api/auth/login
+// @access  Public
 const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
