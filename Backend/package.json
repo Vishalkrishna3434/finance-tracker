@@ -1,0 +1,32 @@
+{
+  "name": "finance-tracker",
+  "version": "1.0.0",
+  "description": "Full-stack MERN dashboard to track income, expenses, and portfolio performance with real-time analytics.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vishalkrishna3434/finance-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vishalkrishna3434/finance-tracker/issues"
+  },
+  "homepage": "https://github.com/Vishalkrishna3434/finance-tracker#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.3.0"
+  }
+}
