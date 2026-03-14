@@ -7,11 +7,11 @@ import AddTransaction from "../Transactions/AddTransaction";
 
 const Dashboard = () => {
   const { loadtransactions, loadsummary } = useContext(TransactionContext);
-  
-// eslint-disable-next-line
+
   useEffect(() => {
     loadtransactions();
     loadsummary();
+    // eslint-disable-next-line
   }, []);
 
   return (
