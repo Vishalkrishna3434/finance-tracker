@@ -1,2 +1,20 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Environment Variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Frontend Build
+/frontend/build
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
