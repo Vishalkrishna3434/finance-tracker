@@ -1,38 +1,281 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --primary: #9c88ff;
+  --income: #2ecc71;
+  --expense: #c0392b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
+/* NAVBAR */
+nav {
+  width: 100%;
+  background-color: var(--primary);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav h2 {
+  color: #fff;
+  margin: 0;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+}
+
+nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav span {
+  color: #fff;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+nav button {
+  background: #fff;
+  border: none;
+  color: var(--primary);
+  padding: 6px 16px;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+nav button:hover {
+  background: #f0ebff;
+  transform: scale(1.05);
+}
+
+/* CONTAINER */
+.container {
+  margin: 30px auto;
+  width: 400px;
+}
+
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+h2 {
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+}
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* BALANCE */
+.balance {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.balance h4 {
+  font-size: 14px;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.balance h1 {
+  font-size: 48px;
+  margin: 5px 0;
+  color: #333;
+}
+
+/* INCOME EXPENSE */
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.money.plus {
+  color: var(--income);
+}
+
+.money.minus {
+  color: var(--expense);
+}
+
+/* FORM */
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
+select {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  transition: border-color 0.2s;
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--primary);
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background-color: #7c6fe0;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+/* TRANSACTION LIST */
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.list li.plus {
+  border-right: 5px solid var(--income);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list li.minus {
+  border-right: 5px solid var(--expense);
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+/* AUTH PAGES */
+.auth-container {
+  margin: 60px auto;
+  width: 400px;
+  background: #fff;
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.auth-container a {
+  display: block;
+  text-align: center;
+  color: var(--primary);
+  margin-top: 15px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
 }
