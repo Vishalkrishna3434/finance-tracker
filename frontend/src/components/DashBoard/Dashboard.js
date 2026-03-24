@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { TransactionContext } from "../../context/TransactionContext";
 import Balance from "../Transactions/Balance";
 import IncomeExpenses from "../Transactions/IncomeExpenses";
+import FinanceCharts from "../Transactions/FinanceCharts";
 import TransactionList from "../Transactions/TransactionList";
 import AddTransaction from "../Transactions/AddTransaction";
 
@@ -19,6 +20,7 @@ const Dashboard = () => {
       <h2>Personal Finance Tracker</h2>
       <Balance />
       <IncomeExpenses />
+      <FinanceCharts />
       <AddTransaction />
       <TransactionList />
     </div>
