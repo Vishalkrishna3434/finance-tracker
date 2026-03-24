@@ -174,6 +174,20 @@ The frontend runs on `http://localhost:3000`.
 4. Authenticated requests use the token to access protected transaction routes.
 5. The dashboard shows summaries, charts, and transaction history based on saved data.
 
+## Screenshots
+
+### Transaction History
+
+![Transaction History](./assets/Image-1.png)
+
+### Dashboard Overview
+
+![Dashboard Overview](./assets/Image-2.png)
+
+### Balance Trend and Add Transaction
+
+![Balance Trend and Add Transaction](./assets/Image-3.png)
+
 ## Future Improvements
 
 - Filter transactions by type or date
@@ -181,4 +195,3 @@ The frontend runs on `http://localhost:3000`.
 - Monthly reports and analytics
 - Export transactions to CSV
 - Improved mobile responsiveness
-
