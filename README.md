@@ -176,17 +176,18 @@ The frontend runs on `http://localhost:3000`.
 
 ## Screenshots
 
-### Transaction History
-
-![Transaction History](./assets/Image-1.png)
-
 ### Dashboard Overview
 
-![Dashboard Overview](./assets/Image-2.png)
+![Dashboard Overview](./assets/Image-1.png)
 
 ### Balance Trend and Add Transaction
 
-![Balance Trend and Add Transaction](./assets/Image-3.png)
+![Balance Trend and Add Transaction](./assets/Image-2.png)
+
+### Transaction History
+
+![Transaction History](./assets/Image-3.png)
+
 
 ## Future Improvements
 
